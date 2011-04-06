@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<link href="css/default.css" rel="stylesheet" />
+		<link href="imgs/favicon.png" rel="shortcut icon" /> 
+		<title>URL Shortener</title>
+	</head>
+	<body>
+		<h1>Url Shortener</h1>
+		<section>
+			<fieldset>			
+				<legend>Shorten an URL</legend>
+				<form method="post" action="/add">
+					<input type="url" name="url" value="http://www.someverylongurl.com" />
+					<button name="submit">Shorten</button>
+				</form>
+				{% if short_url_just_added %}
+				<p>Ok. http://valtech.ch{{ short_url_just_added.shortname }}</p>
+				{% endif %}
+			</fieldset>
+		</section>
+		<section>
+			<h2>Last URLs shortened</h2>
+			<ul>
+				{% for shortUrl in lasts %}
+				<li><a href="http://valte.ch/{{ shortUrl.shortname }}">http://valte.ch/{{ shortUrl.shortname }}</a></li>
+				{% endfor %}
+			</ul>
+		</section>
+	</body>
+</html>
+

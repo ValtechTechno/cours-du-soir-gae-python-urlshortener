@@ -4,7 +4,11 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /favicon.png
+- url: /css/default.css
+  static_files: css/default.css
+  upload: css/default.css
+
+- url: /imgs/favicon.png
   static_files: imgs/favicon.png
   upload: imgs/favicon.png
 
