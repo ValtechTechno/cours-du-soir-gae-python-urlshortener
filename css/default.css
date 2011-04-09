@@ -3,9 +3,15 @@ body {
 	background-color: white;
 }
 
-fieldset, input { border: 1px solid black; }
-input[type=url] { width: 92%; }
-button { width: 7%; }
+section { margin: 0 0 2em 0; }
+
+label { margin-right: 1em; }
+fieldset { border: 1px solid orange; }
+input, button { border: 1px solid black; }
+input[type=url] { width: 85%; }
+button { margin-left: 1em; width: 7%; font-weight: bold; }
 
 input:invalid    { background-color: #C00; }
 input[required]  { border: 2px solid #654; }
+
+h2 { border-bottom: 1px solid orange; width: 100%; }

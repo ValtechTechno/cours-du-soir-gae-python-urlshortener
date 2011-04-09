@@ -1,16 +1,14 @@
-application: urlshortener
+application: shorten-url 
 version: 1
 runtime: python
 api_version: 1
 
 handlers:
-- url: /css/default.css
-  static_files: css/default.css
-  upload: css/default.css
+- url: /css
+  static_dir: css
 
-- url: /imgs/favicon.png
-  static_files: imgs/favicon.png
-  upload: imgs/favicon.png
+- url: /imgs
+  static_dir: imgs
 
 - url: /.*
   script: controller.py
