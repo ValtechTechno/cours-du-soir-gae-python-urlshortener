@@ -5,16 +5,21 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 		<link href="css/default.css" rel="stylesheet" />
 		<link href="imgs/favicon.png" rel="shortcut icon" /> 
-		<title>URL Shortener</title>
+		<meta name="robots" content="index, follow"/>
+		<meta name="keywords" content="url shortener, shortener"/>
+		<meta name="description" content="An URL shortener"/>
+		<meta name="author" content="Gr&eacute;gory Paul"/>
+		<title>My URL Shortener</title>
 	</head>
 	<body>
-		<h1>My Url Shortener</h1>
-		<section>
+		<h1><a href="/" title="URL shortener homepage">My Url Shortener</a></h1>
+ 		<section>
 			<fieldset>			
 				<legend>Shorten an URL</legend>
 				<form method="post" action="/add">
 					<label for="url">URL :</label><input type="url" name="url" placeholder="http://www.google.com" value="" />
 					<button type="submit" name="submit">Shorten</button>
+					{% if error %}<p class="error">{{ error }}</p>{% endif %}
 				</form>
 			</fieldset>
 		</section>

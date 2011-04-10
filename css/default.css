@@ -15,3 +15,5 @@ input:invalid    { background-color: #C00; }
 input[required]  { border: 2px solid #654; }
 
 h2 { border-bottom: 1px solid orange; width: 100%; }
+
+.error { color: red; font-weight: bold; }
