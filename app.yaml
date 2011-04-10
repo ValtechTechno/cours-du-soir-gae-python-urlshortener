@@ -10,6 +10,9 @@ handlers:
 - url: /imgs
   static_dir: imgs
 
+- url: /js
+  static_dir: js
+
 - url: /.*
   script: controller.py
 

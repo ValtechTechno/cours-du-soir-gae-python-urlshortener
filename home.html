@@ -9,6 +9,7 @@
 		<meta name="keywords" content="url shortener, shortener"/>
 		<meta name="description" content="An URL shortener"/>
 		<meta name="author" content="Gr&eacute;gory Paul"/>
+		<script src="js/domain.js"></script>
 		<title>My URL Shortener</title>
 	</head>
 	<body>
@@ -27,7 +28,7 @@
 			<h2>Last URLs shortened :</h2>
 			<ul>
 				{% for shortUrl in lasts %}
-				<li><a href="/{{ shortUrl.shortname }}">/{{ shortUrl.shortname }}</a> ↣ {{ shortUrl.url }}</li>
+				<li><a href="/{{ shortUrl.shortname }}" class="shorturl">/{{ shortUrl.shortname }}</a> ↣ <a href="{{ shortUrl.url }}">{{ shortUrl.url }}</a></li>
 				{% endfor %}
 			</ul>
 		</section>
