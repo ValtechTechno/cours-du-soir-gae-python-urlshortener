@@ -52,6 +52,9 @@ class TestShortUrl(unittest.TestCase):
      o = urlController.get_by_key('fa');
      assert o != None
      self.assertEqual('http://valtech.com/', o.url)
+     self.assertEqual(1, o.hits)
+     o = urlController.get_by_key('fa');
+     self.assertEqual(2, o.hits)
 
    def testGetLasts(self):
      l = urlController.get_lasts()

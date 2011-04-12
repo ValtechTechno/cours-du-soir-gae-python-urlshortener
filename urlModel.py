@@ -6,6 +6,7 @@ class UrlModel(db.Model):
   url = db.StringProperty(multiline=False)
   shortname = db.StringProperty(multiline=False)
   creation_date = db.DateTimeProperty(auto_now_add=True)
+  hits = db.IntegerProperty()
 
 class UrlController():
 
@@ -25,6 +26,7 @@ class UrlController():
       o = UrlModel()
       o.url = url
       o.shortname = self.find_shortname(url)
+      o.hits = 0
       o.put()
     return o
 
@@ -35,7 +37,11 @@ class UrlController():
 
   def get_by_key(self, shortname):
     l = db.GqlQuery('SELECT * FROM UrlModel WHERE shortname = :1', shortname).fetch(1)
-    if len(l) == 1: return l[0]
+    if len(l) == 1:
+      o = l[0]
+      o.hits = o.hits + 1
+      o.put()
+      return o 
     return None
 
   def get_lasts(self, number = 25):
