@@ -39,9 +39,18 @@ class RedirectPage(webapp.RequestHandler):
     shortened_url = urlController.get_by_key(shortname)
     self.redirect(shortened_url.url)
 
+class RssPage(webapp.RequestHandler):
+  def get(self):
+    lasts = urlController.get_lasts()
+    self.response.headers['Content-Type'] = 'application/rss+xml'
+    path = os.path.join(os.path.dirname(__file__), 'rss.xml')
+    self.response.out.write(template.render(path, { 'lasts': lasts } ))
+
+
 application = webapp.WSGIApplication([
 													('/', MainPage),
 													('/add', SavePage),
+													('/rss.xml', RssPage),
 													(r'/(.*)', RedirectPage)
 												])
 

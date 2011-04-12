@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Last URL Shortened</title>
+    <link>http://shorten-url.appspot.com/</link>
+    <description>RSS 2.0 feed containing last URL shortened</description>
+    <language>en-us</language>
+    <webMaster>paulgreg@gmail.com</webMaster>
+	 {% for shortUrl in lasts %}
+	 	<item>
+			<title>'/{{ shortUrl.shortname }}' referring to {{ shortUrl.url }}</title>
+	 		<link>{{ shortUrl.url }}</link>
+	 		<description>{{ shortUrl.hits }} hits, created the {{ shortUrl.creation_date|date:"r" }}, </description>
+			<pubDate>{{ shortUrl.creation_date|date:"r" }}</pubDate>
+			<guid isPermaLink="false">{{ shortUrl.key }}</guid>
+	 	</item>
+	 {% endfor %}
+	 {% if not lasts %}
+	 	<item>
+			<title>Default item in feed</title>
+	 		<link>http://shorten-url.appspot.com/</link>
+			<guid isPermaLink="false">0000000001</guid>
+	 		<description>Default sample item</description>
+	 	</item>
+	 {% endif %}
+	</channel>
+</rss>
+
