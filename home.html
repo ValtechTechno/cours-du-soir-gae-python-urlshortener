@@ -29,7 +29,7 @@
 			<h2>Last URLs shortened :</h2>
 			<ul>
 				{% for shortUrl in lasts %}
-				<li><a href="/{{ shortUrl.shortname }}" class="shorturl">/{{ shortUrl.shortname }}</a><a href="/" class="copyToClipboard" title="copy to clipboard"><img src="imgs/copy.png" alt="copy to clipboard" /></a> ↣ <a href="{{ shortUrl.url }}">{{ shortUrl.url }}</a></li>
+				<li><span class="shorturl">/{{ shortUrl.shortname }}</span><a href="/" class="copyToClipboard" title="copy to clipboard"><img src="imgs/copy.png" alt="copy to clipboard" /></a> ↣ <a href="{{ shortUrl.url }}">{{ shortUrl.url }}</a></li>
 				{% endfor %}
 			</ul>
 		</section>

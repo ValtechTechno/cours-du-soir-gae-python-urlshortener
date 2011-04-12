@@ -5,7 +5,7 @@
 		ZeroClipboard.setMoviePath('scripts/ZeroClipboard.swf');
 
 		if (!document.querySelectorAll) return;
-		var links = document.querySelectorAll('a.shorturl');
+		var links = document.querySelectorAll('.shorturl');
 		for(var i = 0; i < links.length; i++) {
 			// Add host to link
 			links[i].innerHTML = window.location.protocol + '//' + window.location.host + links[i].innerHTML;
