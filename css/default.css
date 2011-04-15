@@ -1,6 +1,8 @@
 body { font-family: Verdana, Arial, Sans-Serif; background-color: white; }
 
 a, input, button, legend, label, span { font-size: 1.1em; }
+a { color: black; }
+a:visited { color: #333; }
 
 header { text-align: center; }
 header h2 { border-bottom: 2px solid orange; }
@@ -27,4 +29,5 @@ li { clear: right; border-bottom: 1px #CCC dotted; margin: 0 0 0.25em 0; }
 li span.hits { float: right; font-size: 0.8em; color: #333; }
 .copyToClipboard { margin: 0 0.25em; }
 
-
+footer { text-align: center; font-size: 0.8em; border-top: 1px solid grey; }
+footer a { font-size: 0.9em; }
