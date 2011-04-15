@@ -1,21 +1,30 @@
-body {
-	font-family: Verdana, Arial, Sans-Serif;
-	background-color: white;
-}
+body { font-family: Verdana, Arial, Sans-Serif; background-color: white; }
 
+a, input, button, legend, label, span { font-size: 1.1em; }
+
+header { text-align: center; }
+header h2 { border-bottom: 2px solid orange; }
 section { margin: 0 0 2em 0; }
 
-label { margin-right: 1em; }
-fieldset { border: 1px solid orange; }
+fieldset { 	border: 1px solid black;
+	background-image: -webkit-gradient(linear, left bottom, left top,	color-stop(0.41, rgb(255,140,0)), color-stop(0.86, rgb(250,244,175)));
+	background-image: -moz-linear-gradient(center bottom, rgb(255,140,0) 86%, rgb(250,244,175) 41%);
+}
+fieldset div { text-align: center; }
+legend { background-color: black; color: white; font-weight: bold; border: 1px solid black; }
 input, button { border: 1px solid black; }
-input[type=url] { width: 85%; }
-button { margin-left: 1em; width: 7%; font-weight: bold; }
-
-input:invalid    { background-color: #C00; }
-input[required]  { border: 2px solid #654; }
-
-h2 { border-bottom: 1px solid orange; width: 100%; }
-
+input[type=url] { width: 80%; margin: 1em 0; }
+button { width: 8%; min-width: 5em; font-weight: bold; }
 .error { color: red; font-weight: bold; }
 
+input:invalid    { background-color: #C66; }
+input[required]  { border: 2px solid #654; }
+
+h1 a { text-decoration: none; color: black; }
+h2 { border-bottom: 1px solid orange; width: 100%; }
+
+li { clear: right; border-bottom: 1px #CCC dotted; margin: 0 0 0.25em 0; }
+li span.hits { float: right; font-size: 0.8em; color: #333; }
 .copyToClipboard { margin: 0 0.25em; }
+
+
