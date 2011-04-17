@@ -23,12 +23,18 @@ input:invalid    { background-color: #D66; }
 input:valid    { background-color: #6D6; }
 input[required]  { border: 2px solid #654; }
 
+input.shorturl { border: 0; width: auto; }
+
 h1 a { text-decoration: none; color: black; }
 h2 { border-bottom: 1px solid orange; width: 100%; }
 
 li { clear: right; border-bottom: 1px #CCC dotted; margin: 0 0 0.25em 0; }
 li span.hits { float: right; font-size: 0.8em; color: #333; }
-.copyToClipboard { margin: 0 0.25em; }
+
+#notification { 
+	width: 100%; position: fixed; left: 0; top: -40px; font-weight: bold; text-align: center; 
+	background-color: orange; padding: 0.5em; border-bottom: 1px solid black;
+}
 
 footer { text-align: center; font-size: 0.8em; border-top: 1px solid grey; }
 footer a { font-size: 0.9em; }
