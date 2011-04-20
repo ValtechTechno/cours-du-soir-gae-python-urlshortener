@@ -32,7 +32,7 @@ class SavePage(webapp.RequestHandler):
       return
 
     shortened_url = urlController.save(url)
-    self.redirect('/')
+    self.redirect('/#' + shortened_url.shortname)
 
 class RedirectPage(webapp.RequestHandler):
   def get(self, shortname):

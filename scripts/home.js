@@ -7,10 +7,16 @@
 		var osWichDoesntSupportInputSelection = navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
 		var notification = document.getElementById('notification');
 
+		var hash = location && location.hash && location.hash.replace('#', '');
+
 		var links = document.querySelectorAll('.shorturl');
 		for(var i = 0; i < links.length; i++) {
 
 			var el = links[i];
+
+			if (hash && el.nodeName == 'A' && el.getAttribute('name') == hash) {
+				el.parentNode.className = 'hightlight';
+			}
 
 			if (!osWichDoesntSupportInputSelection) {
 				if (el.nodeName == 'A') {

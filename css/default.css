@@ -36,7 +36,9 @@ img.clickToSelect { display: none; }
 h1 a { text-decoration: none; color: black; }
 h2 { border-bottom: 1px solid orange; width: 100%; }
 
-li { clear: right; border-bottom: 1px #CCC dotted; margin: 0 0 0.25em 0; }
+li { clear: right; border-bottom: 1px #CCC dotted; margin: 0 0 0.25em 0;  }
+li.hightlight { background-color: #FAE698; }
+li input { background: transparent; }
 li span.hits { float: right; font-size: 0.8em; color: #333; }
 
 #notification { 
