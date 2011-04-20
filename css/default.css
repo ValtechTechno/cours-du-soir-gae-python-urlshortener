@@ -3,14 +3,18 @@ body { font-family: Verdana, Arial, Sans-Serif; background-color: white; }
 a, input, button, legend, label, span { font-size: 1.1em; }
 a { color: black; }
 a:visited { color: #333; }
+a:hover { color: #333; }
 
 header { text-align: center; }
 header h2 { border-bottom: 2px solid orange; }
 section { margin: 0 0 2em 0; }
 
 fieldset { 	border: 1px solid black;
-	background-image: -webkit-gradient(linear, left bottom, left top,	color-stop(0.41, rgb(255,140,0)), color-stop(0.86, rgb(250,244,175)));
-	background-image: -moz-linear-gradient(center bottom, rgb(255,140,0) 86%, rgb(250,244,175) 41%);
+	background: #FAF4AF; /* old browsers */
+	background: -moz-linear-gradient(top, #FAF4AF 0%, #FF8C00 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAF4AF), color-stop(100%,#FF8C00)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FAF4AF', endColorstr='#FF8C00',GradientType=0 ); /* ie */
+	background: -o-linear-gradient(top, #FAF4AF 0%,#FF8C00 100%); /* opera */
 }
 fieldset div { text-align: center; }
 legend { background-color: black; color: white; font-weight: bold; border: 1px solid black; }
