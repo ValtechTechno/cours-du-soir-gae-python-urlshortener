@@ -36,7 +36,8 @@
 			<ul>
 				{% for shortUrl in lasts %}
 				<li>
-					<input type="text" class="shorturl" value="/{{ shortUrl.shortname }}" readonly /><img src="imgs/copy.png" class="clickToSelect" alt="click to select" />
+					<a name="{{ shortUrl.shortname }}" class="shorturl">http://valte.ch/{{ shortUrl.shortname }}</a>
+					<input type="text" class="shorturl" value="http://valte.ch/{{ shortUrl.shortname }}" readonly /><img src="imgs/copy.png" class="clickToSelect" alt="click to select" />
 					↣ <a href="{{ shortUrl.url }}">{{ shortUrl.url }}</a><span class="hits">({{ shortUrl.hits }} hits)</span>
 				</li>
 				{% endfor %}

@@ -1,25 +1,34 @@
 (function() {
-
    if (!window.addEventListener) return;
+	if (!document.querySelectorAll) return;
+
 	window.addEventListener("load", function() {
 
-		if (!document.querySelectorAll) return;
-
+		var osWichDoesntSupportInputSelection = navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
 		var notification = document.getElementById('notification');
 
 		var links = document.querySelectorAll('.shorturl');
 		for(var i = 0; i < links.length; i++) {
-			(function() {
-				var input = links[i];
-				input.value = window.location.protocol + '//' + window.location.host + input.value;
 
-				input.nextSibling.addEventListener("click", function(evt) { 
-					input.select();
-					notification.style.top = '-40px';
-					showSlowly();
-					window.setTimeout(hideSlowly, 4000);
-				}, false);
-			})();
+			var el = links[i];
+
+			if (!osWichDoesntSupportInputSelection) {
+				if (el.nodeName == 'A') {
+					el.style.display = 'none';
+				} else if (el.nodeName == 'INPUT') {
+					el.style.display = el.nextSibling.style.display = 'inline';
+
+					(function() {
+						var input = el;
+						el.nextSibling.addEventListener("click", function() { 
+							input.select();
+							notification.style.top = '-40px';
+							showSlowly();
+							window.setTimeout(hideSlowly, 4000);
+						}, false);
+					})();
+				}
+			}
 		}
 
 		var showSlowly = function() {
