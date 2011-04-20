@@ -5,6 +5,7 @@ import logging
 
 from urlModel import UrlModel
 from urlModel import UrlController
+from urlCleaner import UrlCleaner
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -27,11 +28,13 @@ class SavePage(webapp.RequestHandler):
       goToHome(self, 'Please type an URL.')
       return
 
-    if not url.startswith('http://') and not url.startswith('https://'):
-      goToHome(self, 'URL should start with "http://" or "https://".')
+    try:
+      cleanedUrl = urlCleaner.clean(url)
+    except ValueError as err:
+      goToHome(self, 'URL is malformed.')
       return
 
-    shortened_url = urlController.save(url)
+    shortened_url = urlController.save(cleanedUrl)
     self.redirect('/#' + shortened_url.shortname)
 
 class RedirectPage(webapp.RequestHandler):
@@ -57,4 +60,5 @@ application = webapp.WSGIApplication([
 if __name__ == '__main__':
   logging.getLogger().setLevel(logging.DEBUG)
   urlController = UrlController()
+  urlCleaner = UrlCleaner()
   run_wsgi_app(application)

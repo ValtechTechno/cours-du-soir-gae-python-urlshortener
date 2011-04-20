@@ -38,7 +38,7 @@
 				<li>
 					<a name="{{ shortUrl.shortname }}" class="shorturl">http://valte.ch/{{ shortUrl.shortname }}</a>
 					<input type="text" class="shorturl" value="http://valte.ch/{{ shortUrl.shortname }}" readonly /><img src="imgs/copy.png" class="clickToSelect" alt="click to select" />
-					↣ <a href="{{ shortUrl.url }}">{{ shortUrl.url }}</a><span class="hits">({{ shortUrl.hits }} hits)</span>
+					↣ <a href="{{ shortUrl.url|striptags }}">{{ shortUrl.url|striptags }}</a><span class="hits">({{ shortUrl.hits }} hits)</span>
 				</li>
 				{% endfor %}
 			</ul>
