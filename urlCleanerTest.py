@@ -25,7 +25,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('ftp://someserver')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Bad protocol. It should start with "http://" or "https://"'
 
@@ -33,7 +33,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('http://localhost/some/path')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Cannot refer to localhost'
 
@@ -41,7 +41,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('http://localhost:8080/some/path')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Cannot refer to localhost'
 
@@ -49,7 +49,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('http://127.0.0.1/some/path')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Cannot refer to localhost'
 
@@ -57,7 +57,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('http://192.168.0.1/some/path')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Cannot refer to lan address'
 
@@ -65,7 +65,7 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('http://172.16.32.1/some/path')
        assert False
-     except ValueError as e:
+     except ValueError, e:
         assert True
         assert e.args[0] == 'Cannot refer to lan address'
 
