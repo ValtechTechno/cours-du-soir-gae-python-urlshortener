@@ -22,7 +22,7 @@
 				<fieldset>			
 					<legend>Shorten an URL :</legend>
 					<div>
-						<label for="url">URL : </label><input type="url" name="url" value="" required />
+						<label for="url">URL : </label><input type="url" name="url" value="{% if error %}{{ url }}{% endif %}" required />
 						<button type="submit" name="submit">shorten</button>
 						{% if error %}<p class="error">{{ error }}</p>{% endif %}
 						<p class="notice">That service is reserved for Valtech people or Valtech related news. Irrevelant or abusive content will be removed.</p>

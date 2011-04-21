@@ -15,7 +15,7 @@ def goToHome(self, error = None):
   lasts = urlController.get_lasts()
   self.response.headers['Content-Type'] = 'text/html'
   path = os.path.join(os.path.dirname(__file__), 'home.html')
-  self.response.out.write(template.render(path, { 'lasts': lasts, 'error': error } ))
+  self.response.out.write(template.render(path, { 'lasts': lasts, 'error': error, 'url': self.request.get('url') } ))
 
 class MainPage(webapp.RequestHandler):
   def get(self): 
