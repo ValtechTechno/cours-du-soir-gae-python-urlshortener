@@ -25,43 +25,49 @@ class TestUrlCleaner(unittest.TestCase):
      try:
        urlCleaner.clean('ftp://someserver')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Bad protocol. It should start with "http://" or "https://"'
 
    def testThrowAnErrorIfUrlIsLocalhost(self):
      try:
        urlCleaner.clean('http://localhost/some/path')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Cannot refer to localhost'
 
    def testThrowAnErrorIfUrlIsLocalhostOnOtherPort(self):
      try:
        urlCleaner.clean('http://localhost:8080/some/path')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Cannot refer to localhost'
 
    def testThrowAnErrorIfUrlIsLocalhostIpV4(self):
      try:
        urlCleaner.clean('http://127.0.0.1/some/path')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Cannot refer to localhost'
 
    def testThrowAnErrorIfUrlIsOnLanClassC(self):
      try:
        urlCleaner.clean('http://192.168.0.1/some/path')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Cannot refer to lan address'
 
    def testThrowAnErrorIfUrlIsOnLanClassB(self):
      try:
        urlCleaner.clean('http://172.16.32.1/some/path')
        assert False
-     except ValueError:
+     except ValueError as e:
         assert True
+        assert e.args[0] == 'Cannot refer to lan address'
 
 
 if __name__=="__main__":

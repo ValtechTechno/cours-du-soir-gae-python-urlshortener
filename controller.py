@@ -31,7 +31,7 @@ class SavePage(webapp.RequestHandler):
     try:
       cleanedUrl = urlCleaner.clean(url)
     except ValueError as err:
-      goToHome(self, 'URL is malformed.')
+      goToHome(self, 'URL is malformed. ' + err.args[0])
       return
 
     shortened_url = urlController.save(cleanedUrl)
