@@ -8,7 +8,7 @@
     <webMaster>paulgreg@gmail.com</webMaster>
 	 {% for shortUrl in lasts %}
 	 	<item>
-			<title>'/{{ shortUrl.shortname }}' referring to {{ shortUrl.url }}</title>
+			<title>http://valte.ch/{{ shortUrl.shortname }} referring to {{ shortUrl.url }}</title>
 	 		<link>{{ shortUrl.url }}</link>
 	 		<description>{{ shortUrl.hits }} hits, created the {{ shortUrl.creation_date|date:"r" }}, </description>
 			<pubDate>{{ shortUrl.creation_date|date:"r" }}</pubDate>
@@ -18,7 +18,7 @@
 	 {% if not lasts %}
 	 	<item>
 			<title>Default item in feed</title>
-	 		<link>http://shorten-url.appspot.com/</link>
+	 		<link>http://valte.ch/</link>
 			<guid isPermaLink="false">0000000001</guid>
 	 		<description>Default sample item</description>
 	 	</item>
