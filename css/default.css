@@ -8,6 +8,7 @@ a:hover { color: #333; }
 header { text-align: center; }
 header h2 { border-bottom: 2px solid orange; }
 section { margin: 0 0 2em 0; }
+img { border: 0; }
 
 fieldset { 	border: 1px solid black;
 	background: #FAF4AF; /* old browsers */
