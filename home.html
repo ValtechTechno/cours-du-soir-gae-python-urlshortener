@@ -15,7 +15,7 @@
 	<body>
 		<header>
 			<h1><a href="/" title="Homepage"><img src="imgs/valtech.png" title="Valtech logo"></a></h1>
-			<h2>The Official Valtech URL Shortener</h2>
+			<h2>The Valtech URL Shortener</h2>
 		</header>
  		<section>
 			<form method="post" action="/add">
@@ -26,7 +26,7 @@
 						<label for="url">URL : </label><input type="url" name="url" value="{% if error %}{{ url }}{% endif %}" required />
 						<button type="submit" name="submit">shorten</button>
 						{% if error %}<p class="error">{{ error }}</p>{% endif %}
-						<p class="notice">That service is reserved for Valtech people or Valtech related news. Irrevelant or abusive content will be removed.</p>
+						<p class="notice">Warning, irrevelant or abusive content will be removed.</p>
 					</div>
 				</fieldset>
 			</form>
