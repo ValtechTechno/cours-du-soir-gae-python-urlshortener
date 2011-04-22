@@ -63,7 +63,7 @@ application = webapp.WSGIApplication([
 												])
 
 if __name__ == '__main__':
-  logging.getLogger().setLevel(logging.DEBUG)
+  logging.getLogger().setLevel(logging.ERROR)
   urlController = UrlController()
   urlCleaner = UrlCleaner()
   run_wsgi_app(application)
