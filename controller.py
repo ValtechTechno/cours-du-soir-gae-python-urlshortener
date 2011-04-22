@@ -24,6 +24,11 @@ class MainPage(webapp.RequestHandler):
 class SavePage(webapp.RequestHandler):
   def post(self):
     url = self.request.get('url')
+    potdemiel = self.request.get('potdemiel')
+    if len(potdemiel) != 0: # Very simple protection about spammer's bot who filling all field
+      goToHome(self, 'An error occured.')
+      return
+
     if not url or len(url) == 0: 
       goToHome(self, 'Please type an URL.')
       return

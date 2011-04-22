@@ -22,6 +22,7 @@
 				<fieldset>			
 					<legend>Shorten an URL :</legend>
 					<div>
+						<input type="text" name="potdemiel" class="invisible" value="" />
 						<label for="url">URL : </label><input type="url" name="url" value="{% if error %}{{ url }}{% endif %}" required />
 						<button type="submit" name="submit">shorten</button>
 						{% if error %}<p class="error">{{ error }}</p>{% endif %}

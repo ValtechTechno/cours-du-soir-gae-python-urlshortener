@@ -21,6 +21,7 @@ fieldset div { text-align: center; }
 legend { background-color: black; color: white; font-weight: bold; border: 1px solid black; }
 input, button { border: 1px solid black; }
 input[type=url] { width: 80%; margin: 1em 0; }
+input.invisible { display: none; }
 button { width: 8%; min-width: 5em; font-weight: bold; }
 .error { color: red; font-weight: bold; }
 
