@@ -48,5 +48,6 @@ li span.hits { float: right; font-size: 0.8em; color: #333; }
 	background-color: orange; padding: 0.5em; border-bottom: 1px solid black;
 }
 
-footer { text-align: center; font-size: 0.8em; border-top: 1px solid grey; }
+footer { padding-top: 0.4em; text-align: center; font-size: 0.8em; border-top: 1px solid grey; }
 footer a { font-size: 0.9em; }
+footer a img { vertical-align: -0.4em; }
