@@ -19,5 +19,8 @@ class UrlCleaner():
     if urlToClean.startswith('http://172.16.') or urlToClean.startswith('https://172.16.'):
       raise ValueError('Cannot refer to lan address')
 
+    if urlToClean.startswith('http://valte.ch') or urlToClean.startswith('http://shorten-url.appspot.com'):
+      raise ValueError('Cannot refer to self address')
+
     # Remove strange characters
     return re.sub('[<>\"\']', '', urlToClean) 

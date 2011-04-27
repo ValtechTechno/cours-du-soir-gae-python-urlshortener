@@ -69,6 +69,22 @@ class TestUrlCleaner(unittest.TestCase):
         assert True
         assert e.args[0] == 'Cannot refer to lan address'
 
+   def testThrowAnErrorIfUrlIsSelf(self):
+     try:
+       urlCleaner.clean('http://valte.ch')
+       assert False
+     except ValueError, e:
+        assert True
+        assert e.args[0] == 'Cannot refer to self address'
+
+   def testThrowAnErrorIfUrlIsSelfOnAppSpot(self):
+     try:
+       urlCleaner.clean('http://shorten-url.appspot.com')
+       assert False
+     except ValueError, e:
+        assert True
+        assert e.args[0] == 'Cannot refer to self address'
+
 
 if __name__=="__main__":
    urlCleaner = UrlCleaner()
